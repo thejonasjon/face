@@ -2,15 +2,26 @@ import { CarTaxiFront, ChevronRight, Heart, Menu, ShoppingBag, X } from "lucide-
 import { Link } from "react-router-dom";
 import { Button } from "./ui/button";
 import SearchItem from "./searchItem";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import {AnimatePresence, motion} from "framer-motion";
+import cn from "../utils/cn";
 
 export default function NavBar (){
     const [isMenuOpen, setIsenuOpen] = useState(false);
+    const [scrolled, setScrolled] = useState(false);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            setScrolled(window.scrollY > 15)
+        }
+
+        window.addEventListener("scroll", handleScroll)
+        return () => window.removeEventListener("scroll", handleScroll)
+    }, [])
 
     return (
         <header className="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-transparent">
-            <div className="relative">
+            <div className={cn("relative", scrolled ? "bg-white/90 backdrop-blur-md shadow-sm" : "bg-transparent" )}>
                 <div className="container mx-auto md:px-6 border-b border-gray-200 sm:border-none flex items-center justify-between h-16 md:h-20 px-4">
                     <div className="brand">
                         <Link className="flex items-center gap-2 text-xl md:text-2xl font-semibold tracking-tight" to="/" >
