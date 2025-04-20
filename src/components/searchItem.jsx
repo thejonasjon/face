@@ -12,8 +12,7 @@ export default function SearchItem(){
 
     return (
         <div>
-
-            <button onClick={() => {setShowSearch(!showSearch)}} className="p-2 rounded-full whitespace-nowrap hover:bg-gray-100 transition-all ease-in-out duration-500">
+            <button onClick={() => {setShowSearch(!showSearch)}} className="p-2 rounded-full whitespace-nowrap hover:bg-gray-200 transition-all ease-in-out duration-500">
                 <Search strokeWidth={2} size={14} />
             </button>
             <AnimatePresence>
@@ -29,12 +28,12 @@ export default function SearchItem(){
                             <div className="relative left-0">
                                 <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-gray-400" />
                                 <button onClick={() => setClearSearch("")} className="absolute right-3 top-1/2 -translate-y-1/2 p-2 rounded-full hover:bg-gray-200 transition-all ease-in-out duration-400">
-                                    <X className="text-gray-500 h-5 w-5"/>
+                                    <X className="text-gray-500 h-4 w-4"/>
                                 </button>
                                 <input ref={searchref} value={clearSearch} onChange={(e) => setClearSearch(e.target.value)} type="text" placeholder="Search for products, brands and more..." className="flex w-full border bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 pl-10 pr-10 h-12 rounded-full border-gray-200 focus:border-violet-600 focus:ring-violet-600"/>
                             </div>
 
-                            <div className="flex items-center gap-2 mt-4">
+                            <div className="flex items-center flex-wrap gap-2 mt-4">
                                 <span className="text-sm font-medium text-gray-500">Popular:</span>
                                 {
                                     populars.map((popular, index) => (
