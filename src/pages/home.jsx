@@ -1,15 +1,19 @@
 import Footer from "../components/footer";
+import Hero from "../components/hero";
 import NavBar from "../components/navbar";
+import Categories from "../components/products/categories";
+import Collections from "../components/products/collections";
+import ProductCard from "../components/products/productCard";
+import Products from "../components/products/products";
 
 export default function Home(){
     return (
         <main>
             <NavBar />
-            <section className="pt-16 md:pt-20">
-                <div className="relative h-[85vh] md:h-[90vh] overflow-hidden">
-                    <h4 className="text-8xl">Hello</h4>
-                </div>
-            </section>
+            <Hero />
+            <Products />
+            <Collections ></Collections>
+            <Categories />
             <Footer />
         </main>
     )
