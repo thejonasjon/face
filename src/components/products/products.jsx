@@ -12,7 +12,7 @@ export default function Products() {
     { text: "Trending", icon: <TrendingUp className="h-4 w-4" /> },
     { text: "New Arrival", icon: <Sparkles className="h-4 w-4" /> },
     { text: "Popular", icon: <Flame className="h-4 w-4" /> },
-    { text: "Dresses", icon: <TrendingUp className="h-4 w-4" /> },
+    { text: "Dresses", icon: null },
     { text: "Tops", icon: null },
     { text: "Bottoms", icon: null },
     { text: "Outerwear", icon: null },
